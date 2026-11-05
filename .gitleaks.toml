@@ -1,0 +1,15 @@
+# Расширяет стандартные правила Gitleaks и пропускает тестовые и мок-каталоги.
+# Подхватывается хуком автоматически, если лежит в корне репозитория.
+title = "git_leak_shield"
+
+[extend]
+useDefault = true
+
+[allowlist]
+description = "Тесты, моки, примеры"
+paths = [
+  '''(^|/)tests?/fixtures/''',
+  '''(^|/)mocks?/''',
+  '''\.example$''',
+  '''\.sample$''',
+]
